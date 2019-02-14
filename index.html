@@ -6,9 +6,31 @@
 	<script type="text/javascript">
 		function loadData() {
 			// crear una petición
+			let xhr = new XMLHttpRequest();
+
+			xhr.onreadystatechange =function () {
+				console.log(this.readyState, this.status, this.statusText);
+			}
+
+			xhr.open('GET', 'https://floocharm.github.io/ajax/wa.json');
+
 			// procesar una petición
-			// modificar contenido html
+			xhr.onload = function () {
+				if (this.readyState === 4 && this.status === 200) {
+					// modificar contenido html
+					// cambiar texto
+					let data = JSON.parse(this.responseText)
+					console.log(data);
+
+					// esconder el boton
+					
+				} else {
+					//la informacion no llego
+					alert('ERROR: ' + this.status);
+				}
+			}
 			// enviar una petición
+			xhr.send();
 		}
 	</script>
 </head>
