@@ -1,37 +1,37 @@
 [{
-	"name": "Jessica",
+	"first_name": "Jessica",
 	"last_name": "Sanchez",
-	"b_date": "01-02-34",
+	"b_date": "07-01-98",
 	"likes": [
-		"a",
-		"b"
+		"chocolate",
+		"dormir"
 	],
 	"dislikes": [
-		"g",
-		"h"
+		"agua",
+		"cebolla"
 	]
 }, {
-	"name": "cuac",
-	"last_name": "wa",
-	"b_date": "05-06-78",
+	"first_name": "Brenda",
+	"last_name": "Sanchez",
+	"b_date": "08-07-95",
 	"likes": [
-		"c",
-		"d"
+		"corgis",
+		"exo"
 	],
 	"dislikes": [
-		"i",
-		"j"
+		"camarón",
+		"polillas"
 	]
 }, {
-	"name": "cuac",
-	"last_name": "wo",
-	"b_date": "00-00-00",
+	"first_name": "Yvone",
+	"last_name": "Sanchez",
+	"b_date": "22-01-94",
 	"likes": [
-		"e",
-		"f"
+		"exo",
+		"programar"
 	],
 	"dislikes": [
-		"k",
-		"l"
+		"cebolla",
+		"polvo"
 	]
 }]

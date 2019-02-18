@@ -25,7 +25,7 @@
 
 					let html = '';
 					data.forEach((item) => {
-						html += `<p>${item.nombre} ${item.apellido} nació en ${item.b_date} y le gusta ${item.likes.join(" y ")} y no le gusta ${item.likes.join(" ni ")} </p>`;
+						html += `<p>${item.first_name} ${item.last_name} nació en ${item.b_date} y le gusta ${item.likes.join(" y ")} y no le gusta ${item.dislikes.join(" ni ")} </p>`;
 					});
 
 					emptyDiv.insertAdjacentHTML('beforeend', html);
