@@ -20,8 +20,15 @@
 					// modificar contenido html
 					// cambiar texto
 					let data = JSON.parse(this.responseText)
-					console.log(data);
+					
+					let emptyDiv = document.getElementById("loaded-info");
 
+					let html = '';
+					data.forEach((item) => {
+						html += `<p>${item.nombre} ${item.apellido} nació en ${item.b_date} y le gusta ${item.likes.join(" y ")} y no le gusta ${item.likes.join(" ni ")} </p>`;
+					});
+
+					emptyDiv.insertAdjacentHTML('beforeend', html);
 					// esconder el boton
 					
 				} else {
@@ -29,8 +36,57 @@
 					alert('ERROR: ' + this.status);
 				}
 			}
+
+			xhr.onerror = function () {
+				alert("la conexión ha fallado");
+			}
 			// enviar una petición
 			xhr.send();
+		}
+
+		function postCat() {
+			let xhr = new XMLHttpRequest();
+
+			xhr.open('POST', 'http://10.24.43.221:3000/kittens');
+
+			xhr.setRequestHeader("content-type", "application/json");
+
+			xhr.onload = function() {
+				if (this.readyState === 4 && this.status === 200) {
+					// modificar contenido html
+					// cambiar texto
+					let data = JSON.parse(this.responseText)
+					
+					let emptyDiv = document.getElementById("loaded-info");
+
+					let html = '';
+					data.forEach((item) => {
+						html += `<p>${item.nombre} ${item.apellido} nació en ${item.b_date} y le gusta  y no le gusta </p>`;
+					});
+
+					emptyDiv.insertAdjacentHTML('beforeend', html);
+					// esconder el boton
+					
+				} else {
+					//la informacion no llego
+					alert('ERROR: ' + this.status);
+				}
+			}
+
+			xhr.onerror = function () {
+				alert("la conexión ha fallado");
+			}
+
+			let name = document.getElementById('name').value;
+			let cuteness = document.getElementById('cuteness').value;
+			let color = document.getElementById('color').value;
+			let owner = document.getElementById('owner').value;
+			let explodes = document.getElementById('explodes').checked;
+
+			let obj = { name, cuteness, color, owner, explodes };
+			let data = JSON.stringify(obj);
+			console.log(data)
+			xhr.send(data);
 		}
 	</script>
 </head>
@@ -41,5 +97,20 @@
 		Mostrar info sin recargar la pantalla \(^-^)/
 	</button>
 	<div id="loaded-info"></div>
+	<div class="flex column cat-form">
+		<label>Name</label>
+		<input id="name" type="text" name="name">
+		<label>Cuteness</label>
+		<input id="cuteness" type="number" name="cuteness">
+		<label>Color</label>
+		<input id="color" type="text" name="color">
+		<label>Owner</label>
+		<input id="owner" type="text" name="owner">
+		<div class="flex row">
+			<input id="explodes" type="checkbox" name="explodes">
+			<label>Explodes</label>
+		</div>
+		<button onclick="postCat()">Crear un gatito</button>
+	</div>
 </body>
 </html>

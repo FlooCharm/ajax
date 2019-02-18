@@ -1,10 +1,37 @@
 [{
-	"nombre": "Jessica",
-	"apellido": "Sanchez"
+	"name": "Jessica",
+	"last_name": "Sanchez",
+	"b_date": "01-02-34",
+	"likes": [
+		"a",
+		"b"
+	],
+	"dislikes": [
+		"g",
+		"h"
+	]
 }, {
-	"nombre": "cuac",
-	"apellido": "wa"
+	"name": "cuac",
+	"last_name": "wa",
+	"b_date": "05-06-78",
+	"likes": [
+		"c",
+		"d"
+	],
+	"dislikes": [
+		"i",
+		"j"
+	]
 }, {
-	"nombre": "cuac",
-	"apellido": "wo"
+	"name": "cuac",
+	"last_name": "wo",
+	"b_date": "00-00-00",
+	"likes": [
+		"e",
+		"f"
+	],
+	"dislikes": [
+		"k",
+		"l"
+	]
 }]
